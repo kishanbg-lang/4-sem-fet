@@ -1,23 +1,43 @@
-  <style>
-body {
-    font-family: sans-serif;
-    text-align: center;
-    padding: 40px;
-    line-height: 1.5;
-    background-color:lightblue;
-  }
-  h1 { color: #222; }
-  h2 { color: #666; font-weight: normal; }
-  h1 {
-  text-decoration: underline;
-}
-  .btn {
-    display: inline-block;
-    background: grey;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 20px;
-  }
-</style>
+ body {
+      height: 100%;
+      margin: 0;
+      background:  linear-gradient(to bottom, #24332a, rgb(2, 3, 3));
+      color: white;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+        background: rgba(82, 74, 74, 0.537);
+
+    
+      padding: 30px;
+      border-radius: 20px;
+      width: fit-content;
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    #gitlink {
+      padding: 15px;
+      background: rgb(255, 247, 247);
+      border-radius: 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    #gitlink:hover {
+      background: rgb(139, 131, 131);
+    }
+
+    #center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #middle {
+      margin-top: 20px;
+    }
