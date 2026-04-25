@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    
+    <h1><center>Kishan B G</center></h1>
+    <h2 id=aboutText><center>Undergraduate Computer Science student at Mangalore Institute of Technology and Engineering</center></h2>
+    <a href="https://github.com/kishanbg-lang"><center>Click here to visit my Github profile</center> </a>
+    <p><center>I am in my 2<sup>nd</sup>year of my Engineering</center></p><br>
+    <hr>
+
+    <h2><u>About Me:</u></h2>
+    <p >
+      I'm a student passionate about technology and lifelong learning.<br>
+      I have hands-on experience in C programming, Java, and a growing knowledge of Python.<br>
+      Currently, I'm most interested in Web Development, and I love exploring new technologies as they're launched!
+    </p>
+
+    <h2><u>🚀 Skills & Interests:</u></h2>
+    <ul>
+      <li><b>Languages:</b> C, Java, Python</li>
+      <li><b>Area of Interest:</b> Web Development, AI</li>
+      <li><b>Always Learning:</b> I enjoy trying out new frameworks, tools, and keeping up with the latest trends in tech.</li>
+    </ul>
+
+    <h2><u>🌱 What I'm Up To:</u></h2>
+    <ul>
+      <li>Building my web development skills</li>
+      <li>Exploring modern frameworks and libraries</li>
+      <li>Keeping up with new launches and innovations</li>
+    </ul>
+<hr>
+
+<button onclick="editAbout()">Edit About Me</button>
+
+<script>
+function editAbout() {
+  let newText = prompt("Enter new 'About Me' content:");
+
+  if (newText && newText.trim() !== "") {
+    document.getElementById("aboutText").innerHTML = newText;
+    alert("Content updated!");
+  } else {
+    alert("Content cannot be empty!");
+  }
+}
+</script>
+  </body>
+</html>
