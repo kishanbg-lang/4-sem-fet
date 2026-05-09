@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .stack-container {
+    position: relative;
+    width: 165px;
+    height: 150px;
+    margin-top: 20px;
+  }
+
+  .color-layer {
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+  }
+
+  .blue  { background-color: blue; }
+  .red   { background-color: red;  }
+  .green { background-color: green;}
+
+  button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+  <button onclick="showColor('blue-box')">Blue</button>
+  <button onclick="showColor('red-box')">Red</button>
+  <button onclick="showColor('green-box')">Green</button>
+
+  <div class="stack-container">
+    <div id="blue-box" class="color-layer blue" style="z-index: 2;">I am Blue</div>
+    <div id="red-box" class="color-layer red">I am Red</div>
+    <div id="green-box" class="color-layer green">I am Green</div>
+  </div>
+
+  <script>
+    function showColor(boxId) {
+      const boxes = document.querySelectorAll('.color-layer');
+      
+      boxes.forEach(box => {
+        box.style.zIndex = "1";
+      });
+
+      document.getElementById(boxId).style.zIndex = "10";
+    }
+  </script>
+
+</body>
+</html>
