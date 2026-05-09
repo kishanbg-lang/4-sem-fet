@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+  .hidden { display: none; }
+  .locked { color: red; font-size: 29px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div id="granted" class="hidden">
+    <h1>Welcome</h1>
+    <p>Access has been granted to the system.</p>
+  </div>
+
+  <div id="denied" class="hidden">
+    <p class="locked">SYSTEM LOCKED</p>
+    <p>Too many attempts. Access is permanently denied.</p>
+  </div>
+
+<script>
+  const KEY = "1234";
+  let isCorrect = false;
+
+  let firstTry = prompt("Enter Secret Key:");
+
+  if (firstTry === KEY) {
+    isCorrect = true;
+  } else {
+    alert("Wrong! Now you have 3 counted attempts left.");
+    
+    let count = 0;
+    while (count < 3) {
+      let input = prompt("Counted Attempt " + (count + 1) + " of 3\nEnter Secret Key:");
+      
+      if (input === KEY) {
+        isCorrect = true;
+        break; 
+      }
+      
+      count++;
+      if (count < 3) alert("Access Denied. " + (3 - count) + " tries remaining.");
+    }
+  }
+
+  if (isCorrect) {
+    document.getElementById('granted').classList.remove('hidden');
+  } else {
+    alert("Final Attempt Failed. System Locked.");
+    document.getElementById('denied').classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
