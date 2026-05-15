@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form Example</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        background: #3982b3;
+background: linear-gradient(90deg, rgba(57, 130, 179, 1) 14%, rgba(9, 9, 121, 0.67) 58%, rgba(0, 212, 255, 1) 94%);
+min-height: 100vh;
+
+        }
+.main{
+    
+    background: #ffffffa7;
+    padding: 40px;
+    border-radius: 30px;
+    margin-bottom: 28px;
+}
+
+h2{
+    margin-top: 0;
+    margin-bottom: 30px;
+    align-items: center;
+    border-bottom: #3982b3 2px solid;
+    font-size: 29px;
+    justify-content: center;
+    display:flex;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 150px 250px;
+    gap: 15px;
+    align-items: center;
+}
+
+label{
+    font-size: 18px;
+    font-weight: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+input, select, textarea{
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+#button{
+    grid-column: 1 / 3;
+    justify-self: center;
+    padding: 15px 55px;
+    background: #a9abd8;
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+#button:hover{
+    background: #3982b399;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.main2{
+    
+    background: #ffffffa7;
+    padding: 40px;
+    border-radius: 30px;
+      font-size: 18px;
+    font-weight: 500px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+    </style>
+
+
+</head>
+
+
+
+<body>
+    <div class="main">
+    <h2>Contact Form</h2>
+
+    <form action="/submit" method="">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" >
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" >
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone">
+
+    <label for="gender">Gender:</label>
+    <div>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+    </div>
+
+    <label for="subscribe">Subscribe:</label>
+    <div>
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Newsletter</label>
+    </div>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+    </select>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+
+    <div></div>
+    <button id="button" type="submit">Submit</button>
+
+</form>
+    </div>
+
+    <div class="main2">
+        <h2>Submitted Data</h2>
+        <p><strong>Name:</strong> <span id="display-name"></span></p>
+        <p><strong>Email:</strong> <span id="display-email"></span></p>
+        <p><strong>Phone:</strong> <span id="display-phone"></span></p>
+        <p><strong>Gender:</strong> <span id="display-gender"></span></p>
+        <p><strong>Subscribed:</strong> <span id="display-subscribe"></span></p>
+        <p><strong>Country:</strong> <span id="display-country"></span></p>
+        <p><strong>Message:</strong> <span id="display-message"></span></p>     
+    </div>
+
+    <script>
+let form = document.querySelector("form");
+let nameInput = document.getElementById("name");
+let emailInput = document.getElementById("email");
+let phoneInput = document.getElementById("phone");
+let genderInputs = document.getElementsByName("gender");
+let subscribeInput = document.getElementById("subscribe");
+let countryInput = document.getElementById("country");
+let messageInput = document.getElementById("message");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("display-name").textContent = nameInput.value;
+    document.getElementById("display-email").textContent = emailInput.value;        
+    document.getElementById("display-phone").textContent = phoneInput.value;
+    let selectedGender = Array.from(genderInputs).find(input => input.checked);
+    document.getElementById("display-gender").textContent = selectedGender ? selectedGender.value : "Not specified";
+    document.getElementById("display-subscribe").textContent = subscribeInput.checked ? "Yes" : "No";
+    document.getElementById("display-country").textContent = countryInput.value;    
+    document.getElementById("display-message").textContent = messageInput.value;
+    document.querySelector(".main").style.display = "none";
+    document.querySelector(".main2").style.display = "block";
+
+
+});
+</script>
+<a id="button" href="https://sachinacharya28.github.io/SEM-4-FET/assignments/one.html">Home Page</a>
+</body>
+</html>
