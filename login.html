@@ -10,138 +10,136 @@
 }
 
 body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Poppins',sans-serif;
     background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
     color:white;
-    line-height:1.6;
+    min-height:100vh;
     padding:40px 20px;
-}
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 h1{
     text-align:center;
-    font-size:3rem;
+    font-size:3.5rem;
     color:#38bdf8;
     margin-bottom:10px;
 }
 
-.subtitle{
+h2{
     text-align:center;
-    font-size:1.2rem;
-    color:#cbd5e1;
-    margin-bottom:25px;
-}
-
-.github{
-    text-align:center;
+    color:#e2e8f0;
     margin-bottom:20px;
 }
 
-.github a{
-    display:inline-block;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    padding:12px 25px;
-    border-radius:10px;
-    transition:0.3s;
-    font-weight:bold;
-}
-
-.github a:hover{
-    background:#1d4ed8;
-    transform:translateY(-3px);
-}
-
-.center-text{
+p{
     text-align:center;
-    margin-bottom:25px;
-    color:#e2e8f0;
+    margin-top:15px;
+    color:#cbd5e1;
+    font-size:1.1rem;
 }
 
 hr{
     border:none;
     height:2px;
     background:#475569;
-    margin:30px 0;
+    margin:35px auto;
+    width:80%;
 }
 
-section{
-    background:rgba(255,255,255,0.05);
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:25px;
+body > a{
+    display:flex;
+    justify-content:center;
+    text-decoration:none;
+    margin-top:20px;
+}
+
+body > a center{
+    background:#2563eb;
+    color:white;
+    padding:14px 28px;
+    border-radius:12px;
+    font-size:1rem;
+    font-weight:600;
     transition:0.3s;
+    box-shadow:0 5px 15px rgba(37,99,235,0.4);
 }
 
-section:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+body > a center:hover{
+    background:#1d4ed8;
+    transform:translateY(-4px);
 }
 
-h2{
+div{
+    max-width:1100px;
+    margin:auto;
+    background:rgba(255,255,255,0.05);
+    padding:35px;
+    border-radius:25px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+div h2{
+    text-align:left;
     color:#38bdf8;
-    margin-bottom:15px;
-}
-
-p{
-    color:#e2e8f0;
+    margin-bottom:30px;
+    font-size:2rem;
 }
 
 ul{
     list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
 }
 
 li{
-    margin-bottom:15px;
-    color:#f1f5f9;
-}
-
-.assignment-buttons{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-    margin-top:20px;
-}
-
-.assignment-buttons a{
-    text-decoration:none;
-    background:#0ea5e9;
-    color:white;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:18px;
+    padding:30px 20px;
     text-align:center;
-    padding:14px;
+    transition:0.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+li:hover{
+    transform:translateY(-8px) scale(1.03);
+    background:rgba(255,255,255,0.12);
+}
+
+li a{
+    text-decoration:none;
+    background:linear-gradient(135deg,#0ea5e9,#2563eb);
+    color:white;
+    padding:14px 24px;
     border-radius:12px;
-    font-weight:bold;
+    display:inline-block;
+    font-weight:600;
     transition:0.3s;
     box-shadow:0 5px 15px rgba(14,165,233,0.3);
 }
 
-.assignment-buttons a:hover{
-    background:#0284c7;
-    transform:scale(1.05);
+li a:hover{
+    background:linear-gradient(135deg,#0284c7,#1d4ed8);
+    transform:scale(1.08);
+}
+
+br{
+    display:none;
 }
 
 @media(max-width:768px){
 
-    .container{
-        padding:20px;
-    }
-
     h1{
-        font-size:2.2rem;
+        font-size:2.5rem;
     }
 
-    .subtitle{
-        font-size:1rem;
+    h2{
+        font-size:1.1rem;
+    }
+
+    div{
+        padding:20px;
     }
 
 }
@@ -152,27 +150,6 @@ li{
     <a href="https://github.com/kishanbg-lang"><center>Click here to visit my Github profile</center> </a>
     <p><center>I am in my 2<sup>nd</sup>year of my Engineering</center></p><br>
     <hr>
-
-    <h2><u>About Me:</u></h2>
-    <p>
-      I'm a student passionate about technology and lifelong learning.<br>
-      I have hands-on experience in C programming, Java, and a growing knowledge of Python.<br>
-      Currently, I'm most interested in Web Development, and I love exploring new technologies as they're launched!
-    </p>
-
-    <h2><u>🚀 Skills & Interests:</u></h2>
-    <ul>
-      <li><b>Languages:</b> C, Java, Python</li>
-      <li><b>Area of Interest:</b> Web Development, AI</li>
-      <li><b>Always Learning:</b> I enjoy trying out new frameworks, tools, and keeping up with the latest trends in tech.</li>
-    </ul>
-
-    <h2><u>🌱 What I'm Up To:</u></h2>
-    <ul>
-      <li>Building my web development skills</li>
-      <li>Exploring modern frameworks and libraries</li>
-      <li>Keeping up with new launches and innovations</li>
-    </ul>
     <div>
   <h2><u>Assignments:</u></h2>
   <ul>
